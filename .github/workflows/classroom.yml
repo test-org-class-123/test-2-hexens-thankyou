@@ -15,17 +15,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Run tests
-      uses: classroom-resources/autograding-io-grader@v1
-        with:
-          test-name: Forge test
-          id: forge-test
-          setup-command:|
-            curl -L https://foundry.paradigm.xyz | bash
-            foundryup
-          command: forge test 
-          comparison-method: included
-          expected-output: ok. 2 passed;
-          timeout: 1
+      uses: 'classroom-resources/autograding-io-grader@v1'
+      with:
+        test-name: Forge test
+        id: forge-test
+        setup-command: |
+          curl -L https://foundry.paradigm.xyz | bash
+          foundryup
+        command: forge test 
+        comparison-method: included
+        expected-output: ok. 2 passed;
+        timeout: 1
       # This is where you place your autograding tests
       # For more information on this runner, see the documentation at: https://github.com/classroom-resources/autograding-io-grader
       #
